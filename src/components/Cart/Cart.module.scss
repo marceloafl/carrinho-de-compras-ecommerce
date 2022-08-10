@@ -1,0 +1,9 @@
+.main{
+    background-color: #F8F8F8;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: "cart summary";
+    grid-template-columns: 65% auto;
+    grid-template-rows: auto;
+    padding: 4rem;
+}

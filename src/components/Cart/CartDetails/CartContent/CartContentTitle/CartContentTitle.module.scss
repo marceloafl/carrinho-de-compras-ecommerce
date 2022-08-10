@@ -1,0 +1,21 @@
+.title__wrapper{
+    border-bottom: 1px solid #CFCFCF;
+    display: flex;
+    padding: 1rem .5rem;
+    
+    h3{
+        font-size: 1.125rem;
+    }
+    
+    .title--product{
+        width: 60%;
+    }
+    
+    .title--quantity{
+        width: 20%;
+    }
+    
+    .title--price{
+        width: 20%;
+    }
+}

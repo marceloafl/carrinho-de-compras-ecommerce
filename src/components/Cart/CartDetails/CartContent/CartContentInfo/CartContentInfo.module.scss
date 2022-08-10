@@ -1,0 +1,20 @@
+.info__wrapper{
+    display: flex;
+    padding: 1rem .5rem;
+    
+    h3{
+        font-size: 1.25rem;
+    }
+    
+    .title--product{
+        width: calc(40% + 90px);
+    }
+    
+    .title--quantity{
+        width: 20%;
+    }
+    
+    .title--price{
+        width: auto;
+    }
+}

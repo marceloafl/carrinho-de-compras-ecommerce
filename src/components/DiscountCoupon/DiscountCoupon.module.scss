@@ -1,0 +1,25 @@
+.discount-coupon{
+    box-sizing: border-box;
+    display: flex;
+    height: 48px;
+    justify-content: space-between;
+    margin: 1rem 0;
+
+    input{
+        border: 1px solid #BBB;
+        border-radius: 10px;
+        box-sizing: border-box;
+        height: 100%;
+        padding: 10px;
+        width: 65%;    
+    }
+
+    input:focus{
+        outline: 1px solid #5b00af;
+    }
+
+    button{
+        margin: 0px;
+        width: 30%;
+    }
+}

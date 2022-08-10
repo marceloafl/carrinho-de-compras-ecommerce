@@ -1,0 +1,20 @@
+.menu__wrapper{
+    align-items: center;
+    background-color: #F8F8F8;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    margin: 0 1rem;
+    padding: 1rem;
+
+    p {
+        color: #5f5f5f;
+        margin: 0 1rem;
+    }
+
+    svg {
+        color: #5f5f5f;
+        font-size: 1.25rem;
+    }
+}

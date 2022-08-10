@@ -1,0 +1,33 @@
+.searchWrapper{
+    display: flex;
+    height: 50%;
+    margin: 0 1rem;
+    padding: 2px;
+    width: 480px;
+    
+    input{
+        border: 1px solid #BBB;
+        border-radius: 5px;
+        height: 100%;
+        padding: 10px;
+        width: 100%;      
+    }
+
+    input:focus{
+        outline: 1px solid #5b00af;
+    }
+    
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        height: 100%;
+        transform: translateX(-110%);
+
+        svg {
+            color: #CFCFCF;
+            font-size: 1.25rem;
+            height: 100%;
+        }
+    }
+}

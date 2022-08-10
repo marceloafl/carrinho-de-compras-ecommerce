@@ -1,0 +1,14 @@
+.header-wrapper{
+    align-items: center;
+    background-color: #FFF;
+    border-bottom: 1px solid #CFCFCF;
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+    padding: 0 36px;
+
+    .wrapper{
+        display: flex;
+        height: inherit;
+    }
+}
