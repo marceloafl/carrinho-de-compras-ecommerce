@@ -1,0 +1,25 @@
+.counter{
+    align-items: center;
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    height: 32px;
+    padding: 0.1rem;
+    width: 80px;
+
+    button{
+        background-color: #F8F8F8;
+        border: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        height: 100%;
+        width: 30%;
+    }
+    
+    p{
+        background-color: #FFF;
+        text-align: center;
+        width: 40%;
+    }
+}

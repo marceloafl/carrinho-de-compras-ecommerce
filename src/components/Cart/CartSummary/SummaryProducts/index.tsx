@@ -8,7 +8,7 @@ function SummaryProducts(){
                 <span> item</span>)
             </h4>
             <h4>R$
-                <span> 29,90</span>
+                <span> 179,90</span>
             </h4>
         </div>
     )

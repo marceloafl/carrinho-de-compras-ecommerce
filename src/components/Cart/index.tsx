@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import style from './Cart.module.scss';
 import CartDetails from './CartDetails';
 import CartSummary from './CartSummary';

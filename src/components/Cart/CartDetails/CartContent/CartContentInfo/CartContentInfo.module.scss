@@ -1,6 +1,9 @@
 .info__wrapper{
+    align-items: center;
+    box-sizing: border-box;
     display: flex;
-    padding: 1rem .5rem;
+    height: 120px;
+    padding: 1rem;
     
     h3{
         font-size: 1.25rem;
@@ -17,4 +20,8 @@
     .title--price{
         width: auto;
     }
+}
+
+.info__wrapper > div{
+    margin: 0 .25rem
 }

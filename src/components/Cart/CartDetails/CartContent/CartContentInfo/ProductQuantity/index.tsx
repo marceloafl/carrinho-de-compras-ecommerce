@@ -1,8 +1,11 @@
+import Counter from './Counter';
 import style from './ProductQuantity.module.scss';
 
 function ProductQuantity(){
     return (
-        <div className={style.quantity}>quantidade</div>
+        <div className={style.quantity}>
+            <Counter />
+        </div>
     )
 }
 
