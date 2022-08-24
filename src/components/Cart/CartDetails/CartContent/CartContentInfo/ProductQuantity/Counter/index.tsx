@@ -1,20 +1,12 @@
-import { useState } from 'react';
 import style from './Counter.module.scss';
 
-function Counter(){
-    const [number, setNumber] = useState(0);
+interface Props {
+    number: number,
+    decrement: () => void,
+    increment: () => void,
+}
 
-    function increment(){
-        return setNumber(number + 1)
-    }
-
-    function decrement(){
-        if(number > 1){
-            return setNumber(number - 1)
-        }
-        return number;
-    }
-
+function Counter({number, decrement, increment}: Props){
     return (
         <div className={style['counter']}>
             <button onClick={decrement}>-</button>

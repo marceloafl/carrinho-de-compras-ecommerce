@@ -1,11 +1,15 @@
 import style from './IconCart.module.scss';
 import {FaShoppingCart} from 'react-icons/fa';
 
-function IconCart(){
+interface Props{
+    number: number,
+}
+
+function IconCart({number}: Props){
     return (
-        <a className={style['icon--shopping-cart']}>
+        <a href="#" className={style['icon--shopping-cart']}>
             <FaShoppingCart />
-            <div className={style['shopping-cart-counter']}>1</div>
+            <div className={style['shopping-cart-counter']}>{number}</div>
         </a>
     )
 }

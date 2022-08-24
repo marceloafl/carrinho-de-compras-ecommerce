@@ -1,4 +1,4 @@
-import Button from '../Buttons/Button';
+import Button from '../Button'
 import style from './DiscountCoupon.module.scss';
 
 function DiscountCoupon(){
@@ -9,7 +9,7 @@ function DiscountCoupon(){
                 placeholder="Cupom de desconto"
                 name="discountCoupon"
             />
-            <Button>Aplicar</Button>
+            <Button buttonType={'main'}>Aplicar</Button>
         </div>
     )
 }

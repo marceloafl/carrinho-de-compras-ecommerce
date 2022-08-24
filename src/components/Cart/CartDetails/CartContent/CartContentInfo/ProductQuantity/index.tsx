@@ -1,10 +1,20 @@
 import Counter from './Counter';
 import style from './ProductQuantity.module.scss';
 
-function ProductQuantity(){
+interface Props {
+    number: number,
+    decrement: () => void,
+    increment: () => void,
+}
+
+function ProductQuantity({number, decrement, increment}: Props){
     return (
         <div className={style.quantity}>
-            <Counter />
+            <Counter
+                number={number}
+                decrement={decrement}
+                increment={increment}
+            />
         </div>
     )
 }

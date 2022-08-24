@@ -1,10 +1,15 @@
 import style from './ProductPrice.module.scss';
 import {FaTrashAlt} from 'react-icons/fa';
+import { maskNumber } from '../../../../../../common/utils/maskNumber';
 
-function ProductPrice(){
+interface Props{
+    price: number,
+}
+
+function ProductPrice({price}: Props){
     return (
         <div className={style.price}>
-            <p>R$ 179,90</p>
+            <p>{maskNumber(price)}</p>
             <div className={style.delete}>
                 <FaTrashAlt />
             </div>
