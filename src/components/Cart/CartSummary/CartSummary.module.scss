@@ -2,14 +2,16 @@
     background-color: #FFF;
     border-radius: 5px;
     box-sizing: border-box;
-    box-shadow: 2px 2px 10px #CFCFCF;
-    grid-area: summary;
+    box-shadow: 2px 10px 10px #CFCFCF;
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
     margin-left: 1rem;
     padding: 1.5rem;
     width: 100%;
 
     h3{
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         margin-bottom: 2rem;
     }
 

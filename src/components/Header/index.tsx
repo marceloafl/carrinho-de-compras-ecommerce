@@ -1,4 +1,4 @@
-import Logo from "./Logo";
+import Logo from "../Logo";
 import Search from "./Search/Search";
 import style from './Header.module.scss';
 import Menu from "./Menu";

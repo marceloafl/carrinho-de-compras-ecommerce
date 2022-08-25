@@ -1,0 +1,12 @@
+.recommended-product__card{
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 2px 10px 10px #CFCFCF;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+    width: calc(100% / 4 - 1rem);
+}

@@ -1,11 +1,14 @@
 import style from './ProductImage.module.scss';
-import productImage from '../../../../../../assets/images/racao_dog.png';
 
-function ProductImage(){
+interface Props{
+    image: string,
+}
+
+function ProductImage({image}: Props){
     return (
         <div className={style.product}>
             <img
-                src={productImage}
+                src={image}
                 alt='Nome do produto'
             />
         </div>

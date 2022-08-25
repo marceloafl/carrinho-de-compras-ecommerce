@@ -1,28 +1,42 @@
-import ProductDescription from './ProductDescription';
-import ProductImage from './ProductImage';
-import ProductPrice from './ProductPrice';
+import ProductDescription from '../../../../ProductDescription';
+import ProductImage from '../../../../ProductImage';
+import ProductPrice from '../../../../ProductPrice';
 import ProductQuantity from './ProductQuantity';
 import style from './CartContentInfo.module.scss';
+import DeleteProduct from '../../../../DeleteProduct';
 
 interface Props {
-    number: number,
+    name: string,
+    image: string,
+    description: string,
     price: number,
+    number: number,
     decrement: () => void,
     increment: () => void,
 }
 
-function CartContentInfo({number, price, decrement, increment}: Props){
+function CartContentInfo(
+    {
+        name,
+        image,
+        description,
+        price,
+        number,
+        decrement,
+        increment,
+    }: Props){
     return (
-        <div className={style['info__wrapper']}>
-            <ProductImage />
-            <ProductDescription />
+        <li className={style['product-list--cart']}>
+            <ProductImage image={image}/>
+            <ProductDescription description={description}/>
             <ProductQuantity
                 number={number}
                 decrement={decrement}
                 increment={increment}
             />
             <ProductPrice price={price}/>
-        </div>
+            <DeleteProduct />
+        </li>
     )
 }
 

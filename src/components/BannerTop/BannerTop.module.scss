@@ -1,0 +1,17 @@
+.banner-top{
+    align-items: center;
+    background-color: #e4e4e4;
+    display: flex;
+    gap: 2rem;
+    height: 40px;
+    justify-content: center;
+
+    h3{
+        text-transform: uppercase;
+
+        span{
+            color: #5B00AF;
+            font-weight: 700;
+        }
+    }
+}

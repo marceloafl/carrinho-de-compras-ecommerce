@@ -5,5 +5,27 @@
     grid-template-areas: "cart summary";
     grid-template-columns: 65% auto;
     grid-template-rows: auto;
+    padding: 3.5rem;
+    width: 100%;
+
+    
+    .main-info{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        grid-area: cart;
+        width: 100%;
+    }
+    
+    .summary-info{
+        grid-area: summary;
+    }
+}
+
+.main--empty-cart{
+    align-items: center;
+    background-color: #F8F8F8;
+    box-sizing: border-box;
+    display: flex;
     padding: 4rem;
 }

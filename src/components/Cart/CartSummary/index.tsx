@@ -6,6 +6,7 @@ import SummaryShipping from './SummaryShipping';
 import SummaryTotal from './SummaryTotal';
 import { maskNumber } from '../../../common/utils/maskNumber'
 import Button from '../../Button';
+import CartCoupon from './CartCoupon';
 
 interface Props{
     number: number,
@@ -51,6 +52,7 @@ function CartSummary({number, price}: Props){
                 partialTotal={partialTotal}
                 maskNumber={maskNumber}
             />
+            <CartCoupon />
             <SummaryShipping
                 shipping={shipping}
                 partialTotal={partialTotal}

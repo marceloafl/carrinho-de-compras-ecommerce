@@ -1,25 +1,27 @@
+import { IProduct } from '../../../../types/product';
 import style from './CartContent.module.scss';
 import CartContentInfo from './CartContentInfo';
-import CartContentTitle from './CartContentTitle';
 
 interface Props {
     number: number,
-    price: number,
+    products: IProduct[],
     decrement: () => void,
     increment: () => void,
 }
 
-function CartContent({number, price, decrement, increment}: Props){
+function CartContent({number, products, decrement, increment}: Props){
     return (
-        <div className={style['cart-content-wrapper']}>
-            <CartContentTitle />
-            <CartContentInfo
-                number={number}
-                price={price}
-                decrement={decrement}
-                increment={increment}
-            />
-        </div>
+        <ul className={style['cart-content-wrapper']}>
+            {products.map((product) =>(
+                <CartContentInfo
+                    {...product}
+                    key = {product.id}
+                    number={number}
+                    decrement={decrement}
+                    increment={increment}
+                />
+            ))}
+        </ul>
     )
 }
 

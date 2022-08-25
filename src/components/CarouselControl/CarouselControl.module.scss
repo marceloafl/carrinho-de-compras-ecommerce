@@ -1,0 +1,10 @@
+.carousel-control{
+    display: flex;
+    justify-content: space-between;
+    width: 96px;
+
+    svg {
+        cursor: pointer;
+        font-size: 2rem;
+    }
+}

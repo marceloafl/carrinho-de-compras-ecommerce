@@ -1,30 +1,31 @@
 import React from "react";
-import CartTitle from "./CartTitle";
+import SectionTitle from "../../SectionTitle";
 import style from './CartDetails.module.scss';
 import CartContent from "./CartContent";
 import { IProduct } from "../../../types/product";
+import CartContentTitle from "./CartContent/CartContentTitle";
 
 interface Props {
     number: number,
-    products: IProduct[],
-    price: number,
+    products: IProduct[] | undefined,
     decrement: () => void,
     increment: () => void,
 }
 
-function CartDetails({number, products, price, decrement, increment, }: Props){
+function CartDetails({number, products = [], decrement, increment, }: Props){
     return(
         <div className={style['cart-wrapper']}>
-                <CartTitle>
-                    Meu carrinho
-                </CartTitle>
-                <CartContent
-                    number={number}
-                    price={price}
-                    decrement={decrement}
-                    increment={increment}
-                />
-            </div>
+            <SectionTitle>
+                Meu carrinho
+            </SectionTitle>
+            <CartContentTitle />
+            <CartContent
+                number={number}
+                decrement={decrement}
+                increment={increment}
+                products={products}
+            />
+        </div>
     )
 }
 

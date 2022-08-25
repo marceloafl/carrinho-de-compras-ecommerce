@@ -1,0 +1,16 @@
+.recommendation-section{
+    box-sizing: border-box;
+}
+
+.recommendation-list__title{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recommendation-list{
+    box-sizing: border-box;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}

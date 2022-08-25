@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
-import style from './CartTitle.module.scss';
+import style from './SectionTitle.module.scss';
 
-function CartTitle(props: {children: ReactNode}){
+function SectionTitle(props: {children: ReactNode}){
     return (
         <div className={style['title-wrapper']}>
             <h2>{props.children}</h2>
@@ -9,4 +9,4 @@ function CartTitle(props: {children: ReactNode}){
     )
 }
 
-export default CartTitle;
+export default SectionTitle;

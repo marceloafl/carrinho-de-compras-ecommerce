@@ -1,0 +1,28 @@
+.footer{
+    align-items: center;
+    background-color: #F8F8F8;
+    border-top: 1px solid #CFCFCF;
+    display: flex;
+    height: 96px;
+    justify-content: space-between;
+    padding: 1rem 3.25rem;
+
+    img{
+        margin: 1rem 0;
+        width: 360px;
+    }
+}
+
+.contact{
+    p{
+        margin: .5rem 0;
+    }
+
+    a{
+        color: #5B00AF;
+        font-size: 1.125rem;
+        font-weight: 700;
+        height: 48px;
+        width: 200px;
+    }
+}
