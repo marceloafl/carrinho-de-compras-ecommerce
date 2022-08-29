@@ -8,11 +8,12 @@ import CartContentTitle from "./CartContent/CartContentTitle";
 interface Props {
     number: number,
     products: IProduct[] | undefined,
-    decrement: () => void,
-    increment: () => void,
+    incrementTotal: () => void,
+    decrementTotal: () => void,
+    removeProduct: (product: IProduct) => void,
 }
 
-function CartDetails({number, products = [], decrement, increment, }: Props){
+function CartDetails({number, products = [], incrementTotal, decrementTotal, removeProduct}: Props){
     return(
         <div className={style['cart-wrapper']}>
             <SectionTitle>
@@ -21,9 +22,10 @@ function CartDetails({number, products = [], decrement, increment, }: Props){
             <CartContentTitle />
             <CartContent
                 number={number}
-                decrement={decrement}
-                increment={increment}
                 products={products}
+                incrementTotal={incrementTotal}
+                decrementTotal={decrementTotal}
+                removeProduct={removeProduct}
             />
         </div>
     )

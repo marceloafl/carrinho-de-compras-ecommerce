@@ -1,16 +1,16 @@
 import style from './Counter.module.scss';
 
 interface Props {
-    number: number,
+    quantity: number,
     decrement: () => void,
     increment: () => void,
 }
 
-function Counter({number, decrement, increment}: Props){
+function Counter({quantity, decrement, increment}: Props){
     return (
         <div className={style['counter']}>
             <button onClick={decrement}>-</button>
-            <p>{number}</p>
+            <p>{quantity}</p>
             <button onClick={increment}>+</button>
         </div>
     )

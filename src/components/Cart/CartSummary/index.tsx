@@ -10,16 +10,15 @@ import CartCoupon from './CartCoupon';
 
 interface Props{
     number: number,
-    price: number,
 }
 
-function CartSummary({number, price}: Props){
-    const [partialTotal, setPartialTotal] = useState(price);
+function CartSummary({number}: Props){
+    const [partialTotal, setPartialTotal] = useState(0);
     const [shipping, setShipping] = useState(19.9);
-    const [total, setTotal] = useState(price + shipping);
+    const [total, setTotal] = useState(0);
 
     useEffect(() => {
-        calculatesPartialTotal(Number(price), number);
+        calculatesPartialTotal(Number(0), number);
     }, [number]);
     
     useEffect(() => {

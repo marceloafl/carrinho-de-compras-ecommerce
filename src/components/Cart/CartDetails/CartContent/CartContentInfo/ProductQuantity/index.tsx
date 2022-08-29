@@ -1,17 +1,21 @@
+import { useState } from 'react';
 import Counter from './Counter';
 import style from './ProductQuantity.module.scss';
 
 interface Props {
     number: number,
-    decrement: () => void,
+    quantity: number,
     increment: () => void,
+    decrement: () => void,
 }
 
-function ProductQuantity({number, decrement, increment}: Props){
+function ProductQuantity({number, quantity, increment, decrement}: Props){
+    
+
     return (
         <div className={style.quantity}>
             <Counter
-                number={number}
+                quantity={quantity}
                 decrement={decrement}
                 increment={increment}
             />

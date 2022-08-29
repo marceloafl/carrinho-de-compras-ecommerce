@@ -3,21 +3,23 @@ import Cart from '../components/Cart';
 import Header from '../components/Header';
 import { productList } from '../assets/products/products';
 import Footer from '../components/Footer';
+import { IProduct } from '../types/product';
 
 function App() {
-  const [products, setProducts] = useState(productList);
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const [totalPrice, setTotalPrice] = useState();
   const [recommendedProducts, setRecommendedProducts] = useState(productList);
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(productList.length);
   const [carouselIndex, setCarouselIndex] = useState(0);
   const maxIndex = productList.length / 4 - 1;
 
-  function increment(){
-    return setNumber(number + 1)
+  function incrementTotal(){
+    return setNumber(previsouNumber => previsouNumber + 1)
   };
 
-  function decrement(){
+  function decrementTotal(){
     if(number > 1){
-        return setNumber(number - 1)
+        return setNumber(previsouNumber => previsouNumber - 1)
     }
     return number;
   };
@@ -30,6 +32,18 @@ function App() {
     carouselIndex !== 0 ? setCarouselIndex(previousCarouselIndex => previousCarouselIndex - 1) : setCarouselIndex(maxIndex);
   }
   
+  function addProduct(product: IProduct){
+    setProducts(previousProducts => 
+      [...previousProducts, product]
+    )
+  }
+
+  function removeProduct(product: IProduct){
+    products.splice(products.indexOf(product), 1);
+    setProducts(previousProducts => 
+      [...previousProducts]);
+  }
+
   useEffect(() => {
     selectProducts();
   }, [carouselIndex])
@@ -48,13 +62,15 @@ function App() {
     <div>
       <Header number={number}/>
       <Cart
-      products={products}
+        products={products}
         recommendedProducts={recommendedProducts}
         number={number}
         goToNextIndex={goToNextIndex}
         goToPreviousIndex={goToPreviousIndex}
-        decrement={decrement}
-        increment={increment}
+        incrementTotal={incrementTotal}
+        decrementTotal={decrementTotal}
+        addProduct={addProduct}
+        removeProduct={removeProduct}
       />
       <Footer />
     </div>

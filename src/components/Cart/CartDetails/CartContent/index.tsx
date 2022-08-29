@@ -5,11 +5,12 @@ import CartContentInfo from './CartContentInfo';
 interface Props {
     number: number,
     products: IProduct[],
-    decrement: () => void,
-    increment: () => void,
+    incrementTotal: () => void,
+    decrementTotal: () => void,
+    removeProduct: (product: IProduct) => void,
 }
 
-function CartContent({number, products, decrement, increment}: Props){
+function CartContent({number, products, incrementTotal, decrementTotal, removeProduct}: Props){
     return (
         <ul className={style['cart-content-wrapper']}>
             {products.map((product) =>(
@@ -17,10 +18,12 @@ function CartContent({number, products, decrement, increment}: Props){
                     {...product}
                     key = {product.id}
                     number={number}
-                    decrement={decrement}
-                    increment={increment}
+                    incrementTotal={incrementTotal}
+                    decrementTotal={decrementTotal}
+                    removeProduct={removeProduct}
+                    product={product}
                 />
-            ))}
+                ))}
         </ul>
     )
 }

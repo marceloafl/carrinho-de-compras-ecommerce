@@ -8,29 +8,49 @@ import EmptyCart from '../EmptyCart';
 import BannerTop from '../BannerTop';
 
 interface Props{
-    products: IProduct[] | undefined,
+    products: IProduct[],
     recommendedProducts: IProduct[],
     number: number,
     goToNextIndex: () => void,
     goToPreviousIndex: () => void,
-    decrement: () => void,
-    increment: () => void,
+    incrementTotal: () => void,
+    decrementTotal: () => void,
+    addProduct: (product: IProduct) => void,
+    removeProduct: (product: IProduct) => void,
 }
 
-function Cart({products, recommendedProducts, number, goToNextIndex, goToPreviousIndex, decrement, increment}: Props){
-    const [price, setPrice] = useState(179.9);
+function Cart(
+    {
+        products,
+        recommendedProducts,
+        number,
+        goToNextIndex,
+        goToPreviousIndex,
+        incrementTotal,
+        decrementTotal,
+        addProduct,
+        removeProduct,
+    }: Props){    
+    
+    const [productsPriceSum, setProductsPriceSum] = useState<number[]>([]);
+
+    function itemsInCart(){
+        return products.length > 0 ? true : false;
+    }
+
     return (
         <>
-            {products && <BannerTop />}
-            <div className={`${products ? style.main : style['main--empty-cart']}`}>
+            {itemsInCart() && <BannerTop />}
+            <div className={`${itemsInCart() ? style.main : style['main--empty-cart']}`}>
                 <div className={style['main-info']}>
-                    {products ?
+                    {itemsInCart() ?
                         <>
                             <CartDetails
                                 number={number}
-                                decrement={decrement}
-                                increment={increment}
                                 products={products}
+                                incrementTotal={incrementTotal}
+                                decrementTotal={decrementTotal}
+                                removeProduct={removeProduct}
                             /> 
                         </> : <EmptyCart />
                     }
@@ -39,13 +59,13 @@ function Cart({products, recommendedProducts, number, goToNextIndex, goToPreviou
                         recommendedProducts={recommendedProducts}
                         goToNextIndex={goToNextIndex}
                         goToPreviousIndex={goToPreviousIndex}
+                        addProduct={addProduct}
                     />
                 </div>
-                {products &&
+                {itemsInCart() &&
                     <div className={style['summary-info']}>
                         <CartSummary
                             number={number}
-                            price={price}
                         />
                     </div>
                 }

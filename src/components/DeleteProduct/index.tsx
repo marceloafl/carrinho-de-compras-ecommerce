@@ -1,11 +1,20 @@
 import style from './DeleteProduct.module.scss';
 import {FaTrashAlt} from 'react-icons/fa';
+import { IProduct } from '../../types/product';
 
-function DeleteProduct(){
+interface Props{
+    product: IProduct
+    removeProduct: (product: IProduct) => void,
+}
+
+function DeleteProduct({product, removeProduct}: Props){
     return (
-        <div className={style.delete}>
+        <button
+            className={style.delete}
+            onClick={() => removeProduct(product)}
+        >
             <FaTrashAlt />
-        </div>
+        </button>
     )
 }
 

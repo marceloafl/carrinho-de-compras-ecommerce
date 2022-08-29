@@ -1,5 +1,6 @@
 import style from './ProductPrice.module.scss';
 import { maskNumber } from '../../common/utils/maskNumber';
+import { useState } from 'react';
 
 interface Props{
     price: number,

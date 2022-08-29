@@ -9,9 +9,10 @@ interface Props{
     recommendedProducts: IProduct[],
     goToNextIndex: () => void,
     goToPreviousIndex: () => void,
+    addProduct: (product: IProduct) => void,
 }
 
-function ProductRecommendation({recommendedProducts, goToNextIndex, goToPreviousIndex}: Props){
+function ProductRecommendation({recommendedProducts, goToNextIndex, goToPreviousIndex, addProduct}: Props){
 
     return (
         <div className={style['recommendation-section']}>
@@ -29,6 +30,8 @@ function ProductRecommendation({recommendedProducts, goToNextIndex, goToPrevious
                     <ProductCard
                         {...product}
                         key = {product.id}
+                        product={product}
+                        addProduct={addProduct}
                     />
                 ))}
             </ul>
