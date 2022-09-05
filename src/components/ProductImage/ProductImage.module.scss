@@ -1,11 +1,23 @@
 .product{
     grid-area: product;
-    width: 50%;
+    max-width: 100%;
 
     img{
         align-items: center;
         display: flex;
-        width: 100%;
+        max-width: 100%;
     }
 }
 
+@media screen and (max-width: 768px){
+    .product{
+        grid-area: product;
+        max-width: 50%;
+    
+        img{
+            align-items: center;
+            display: flex;
+        }
+    }
+    
+}

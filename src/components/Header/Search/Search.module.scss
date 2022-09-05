@@ -1,4 +1,5 @@
 .searchWrapper{
+    box-sizing: border-box;
     display: flex;
     height: 50%;
     margin: 0 1rem;
@@ -10,7 +11,7 @@
         border-radius: 5px;
         height: 100%;
         padding: 10px;
-        width: 100%;      
+        width: 100%;    
     }
 
     input:focus{
@@ -31,3 +32,19 @@
         }
     }
 }
+
+@media screen and (max-width: 768px){
+    .searchWrapper{
+        height: auto;
+        margin-top: 1rem;
+        order: 3;
+        position: relative;
+        width: 100%;
+
+        button{
+            position: absolute;
+            left: 100%;
+        }
+    }
+}
+

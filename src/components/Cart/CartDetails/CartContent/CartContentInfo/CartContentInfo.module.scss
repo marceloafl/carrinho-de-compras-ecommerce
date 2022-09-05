@@ -26,3 +26,43 @@
 .product-list--cart > div{
     margin: 0 .25rem;
 }
+
+@media screen and (max-width: 768px){
+    .product-list--cart{
+        background-color: #FFF;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: space-between;
+        padding: 1rem;
+
+    }
+
+    .product-list--cart > div:first-child{
+        max-width: 25%;
+        order: 1;
+    }
+    
+    .product-list--cart > div:nth-child(2){
+        align-self: center;
+        width: calc(100% - 40%);
+        order: 2;
+    }
+    
+    .product-list--cart > div:nth-child(3){
+        order: 5;
+        width: auto;
+    }
+    
+    .product-list--cart > div:nth-child(4){
+        order: 4;
+        width: auto;
+    }
+
+    .product-list--cart > button{
+        order: 3;
+    }
+    
+    .product-list--cart > div{
+    }
+}

@@ -2,15 +2,24 @@
     align-items: center;
     background-color: #F8F8F8;
     border-top: 1px solid #CFCFCF;
+    box-sizing: border-box;
     display: flex;
     height: 96px;
     justify-content: space-between;
+    overflow: hidden;
     padding: 1rem 3.25rem;
 
-    img{
-        margin: 1rem 0;
-        width: 360px;
+    ul {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+
+        li{
+            max-width: 36px;
+        }
     }
+    
 }
 
 .contact{
@@ -24,5 +33,19 @@
         font-weight: 700;
         height: 48px;
         width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .footer{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+        height: auto;
+
+        h1{
+            text-align: center;
+            width: 100%;
+        }
     }
 }

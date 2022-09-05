@@ -3,25 +3,20 @@ import style from './CartContent.module.scss';
 import CartContentInfo from './CartContentInfo';
 
 interface Props {
-    number: number,
     products: IProduct[],
-    incrementTotal: () => void,
-    decrementTotal: () => void,
     removeProduct: (product: IProduct) => void,
+    getQuantity: (product: IProduct, quantity: number) => void,
 }
 
-function CartContent({number, products, incrementTotal, decrementTotal, removeProduct}: Props){
+function CartContent({products, removeProduct, getQuantity}: Props){
     return (
         <ul className={style['cart-content-wrapper']}>
             {products.map((product) =>(
                 <CartContentInfo
-                    {...product}
-                    key = {product.id}
-                    number={number}
-                    incrementTotal={incrementTotal}
-                    decrementTotal={decrementTotal}
-                    removeProduct={removeProduct}
                     product={product}
+                    key = {product.id}
+                    removeProduct={removeProduct}
+                    getQuantity={getQuantity}
                 />
                 ))}
         </ul>

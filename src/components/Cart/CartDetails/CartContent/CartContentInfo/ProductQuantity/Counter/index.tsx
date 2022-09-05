@@ -1,16 +1,17 @@
+import { IProduct } from '../../../../../../../types/product';
 import style from './Counter.module.scss';
 
 interface Props {
-    quantity: number,
-    decrement: () => void,
+    product: IProduct,
     increment: () => void,
+    decrement: () => void
 }
 
-function Counter({quantity, decrement, increment}: Props){
+function Counter({product, increment, decrement}: Props){
     return (
         <div className={style['counter']}>
             <button onClick={decrement}>-</button>
-            <p>{quantity}</p>
+            <p>{product.quantity}</p>
             <button onClick={increment}>+</button>
         </div>
     )

@@ -2,5 +2,13 @@
     cursor: pointer;
     font-size: 2rem;
     margin: 0 1rem;
+    text-align: center;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px){
+    .logo{
+        order: 1;
+        width: 100%;
+    }
 }

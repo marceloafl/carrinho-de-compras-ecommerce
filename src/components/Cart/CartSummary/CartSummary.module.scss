@@ -20,3 +20,9 @@
         padding: 1rem 0;
     }
 }
+
+@media screen and (max-width: 768px){
+    .cart-sumary__wrapper{
+        margin-left: 0;
+    }
+}

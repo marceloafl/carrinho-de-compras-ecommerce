@@ -1,11 +1,12 @@
 .cart-wrapper--empty{
     align-items: center;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 50vh;
     justify-content: space-around;
     margin-bottom: 4rem;
-    width: 100%;
+    max-width: 100%;
 
     h3{
         font-size: 2.5rem;
@@ -25,4 +26,8 @@
     button{
         width: 320px;
     }
+}
+
+@media screen and (max-width: 768px){
+
 }

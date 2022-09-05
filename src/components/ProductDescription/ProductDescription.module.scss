@@ -1,8 +1,15 @@
 .description{
-    height: 96px;
+    max-height: 96px;
     width: 100%;
 
     p{
         line-height: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .description{
+        align-self: flex-end;
+        max-height: 128px;
     }
 }

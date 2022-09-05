@@ -26,5 +26,11 @@
     }
 }
 
-
+@media screen and (max-width: 768px){
+    .icon--shopping-cart{
+        position: absolute;
+        right: 0;
+        top: -30px;
+    }
+}
 

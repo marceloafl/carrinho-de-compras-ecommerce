@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { IProduct } from '../../types/product';
 import style from './Button.module.scss';
 
 interface Props{

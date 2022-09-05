@@ -1,17 +1,16 @@
 import style from './SummaryTotal.module.scss';
+import {maskNumber} from '../../../../common/utils/maskNumber';
 
 interface Props{
-    number: number,
-    total: number,
-    maskNumber: (number: number) => string
+    finalPrice: number
 }
 
-function SummaryTotal({number, total, maskNumber}: Props){
+function SummaryTotal({finalPrice}: Props){
     return (
         <div className={style['summary-total']}>
             <h4>Subtotal</h4>
             <p>
-                <span>{` ${maskNumber(total)}`}</span>
+                <span>{maskNumber(finalPrice)}</span>
             </p>
         </div>
     )

@@ -1,5 +1,7 @@
 .recommendation-section{
     box-sizing: border-box;
+    overflow: hidden;
+    grid-area: recommendation;
 }
 
 .recommendation-list__title{
@@ -14,3 +16,11 @@
     gap: 1rem;
     width: 100%;
 }
+
+@media screen and (max-width: 768px){
+    .recommendation-section{
+        order: 2;
+        padding: 2rem;
+    }
+}
+

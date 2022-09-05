@@ -12,7 +12,16 @@ function Footer(){
             <Logo />
             <div>
                 <h4>Formas de pagamento</h4>
-                <img src="https://www.petlove.com.br/static/uploads/images/payment/methods.png" alt="Boleto, cartões de crédito e pix" />
+                <ul className={style['payments']}>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/mastercard-logo.png" alt="Mastercard" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/visa-logo.png" alt="Visa" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/americanexpress-logo.png" alt="American Express" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/dinersclub-logo.png" alt="Diners Club" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/hypercard-logo.png" alt="Hipercard" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/elo-logo.png" alt="Elo" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/barcode-icon.png" alt="Boleto" /></li>
+                    <li><img src="https://static.petz.com.br/images/exp-facelift/pix-transparent.svg" alt="Pix" /></li>
+                </ul>
             </div>
         </div>
     )

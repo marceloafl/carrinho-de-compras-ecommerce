@@ -5,16 +5,16 @@ import Menu from "./Menu";
 import IconCart from "./IconCart";
 
 interface Props{
-    number: number,
+    totalQuantity: number
 }
 
-function Header({number}: Props){
+function Header({totalQuantity}: Props){
     return (
         <div className={style['header-wrapper']}>
             <Logo />
             <Search />
             <div className={style.wrapper}>
-                <IconCart number={number}/>
+                <IconCart totalQuantity={totalQuantity}/>
                 <Menu>Entrar | Cadastrar</Menu> 
             </div>
         </div>

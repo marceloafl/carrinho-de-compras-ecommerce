@@ -10,29 +10,27 @@ import BannerTop from '../BannerTop';
 interface Props{
     products: IProduct[],
     recommendedProducts: IProduct[],
-    number: number,
     goToNextIndex: () => void,
     goToPreviousIndex: () => void,
-    incrementTotal: () => void,
-    decrementTotal: () => void,
     addProduct: (product: IProduct) => void,
     removeProduct: (product: IProduct) => void,
+    getQuantity: (product: IProduct, quantity: number) => void,
+    totalPrice: number,
+    totalQuantity: number,
 }
 
 function Cart(
     {
         products,
         recommendedProducts,
-        number,
-        goToNextIndex,
-        goToPreviousIndex,
-        incrementTotal,
-        decrementTotal,
         addProduct,
         removeProduct,
-    }: Props){    
-    
-    const [productsPriceSum, setProductsPriceSum] = useState<number[]>([]);
+        goToNextIndex,
+        goToPreviousIndex,
+        getQuantity,
+        totalPrice,
+        totalQuantity
+    }: Props){
 
     function itemsInCart(){
         return products.length > 0 ? true : false;
@@ -46,29 +44,27 @@ function Cart(
                     {itemsInCart() ?
                         <>
                             <CartDetails
-                                number={number}
                                 products={products}
-                                incrementTotal={incrementTotal}
-                                decrementTotal={decrementTotal}
                                 removeProduct={removeProduct}
+                                getQuantity={getQuantity}
                             /> 
                         </> : <EmptyCart />
                     }
-                    
-                    <ProductRecommendation
-                        recommendedProducts={recommendedProducts}
-                        goToNextIndex={goToNextIndex}
-                        goToPreviousIndex={goToPreviousIndex}
-                        addProduct={addProduct}
-                    />
                 </div>
                 {itemsInCart() &&
                     <div className={style['summary-info']}>
                         <CartSummary
-                            number={number}
+                            totalPrice={totalPrice}
+                            totalQuantity={totalQuantity}
                         />
                     </div>
                 }
+            <ProductRecommendation
+                recommendedProducts={recommendedProducts}
+                goToNextIndex={goToNextIndex}
+                goToPreviousIndex={goToPreviousIndex}
+                addProduct={addProduct}
+            />
             </div>
         </>
     )

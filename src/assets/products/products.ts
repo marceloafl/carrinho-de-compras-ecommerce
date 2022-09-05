@@ -7,7 +7,8 @@ export const productList: IProduct[] = [
         description: "Areia Sanitária Perfumada Campestre Pipicat - 4kg",
         price: 18.9,
         id: '1',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Ração Úmida Whiskas Sachê Carne ao Molho para Gatos Adultos Castrados - 85 g",
@@ -15,7 +16,8 @@ export const productList: IProduct[] = [
         description: "Ração Úmida Whiskas Sachê Carne ao Molho para Gatos Adultos Castrados - 85 g",
         price: 2.99,
         id: '2',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Brinquedo LCM Bolinha com Penas Cat Toy Azul para Gato - Azul",
@@ -23,7 +25,8 @@ export const productList: IProduct[] = [
         description: "Brinquedo LCM Bolinha com Penas Cat Toy Azul para Gato - Azul",
         price: 5.99,
         id: '3',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Ração Seca PremieR Pet Golden Gatos Adultos Castrados Frango",
@@ -31,7 +34,8 @@ export const productList: IProduct[] = [
         description: "Ração Seca PremieR Pet Golden Gatos Adultos Castrados Frango - 3 kg.",
         price: 67.9,
         id: '4',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Ração Total Equilíbrio para Gatos Castrados Adultos de 1 A 7 Anos - 7,5 Kg",
@@ -39,7 +43,8 @@ export const productList: IProduct[] = [
         description: "Ração Total Equilíbrio para Gatos Castrados Adultos de 1 A 7 Anos - 7,5 Kg",
         price: 233.99,
         id: '5',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Brinquedo LCM Varinha Cat Collors Azul para Gato - Azul",
@@ -47,7 +52,8 @@ export const productList: IProduct[] = [
         description: "Brinquedo LCM Varinha Cat Collors Azul para Gato - Azul",
         price: 16.49,
         id: '6',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Petisco Whiskas Temptations Antibola de Pelo para Gatos Adultos - 40 g",
@@ -55,7 +61,8 @@ export const productList: IProduct[] = [
         description: "Petisco Whiskas Temptations Antibola de Pelo para Gatos Adultos - 40 g",
         price: 10.99,
         id: '7',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Areia Sanitária Chalesco Micro Cristais de Sílica - 1,8Kg",
@@ -63,7 +70,8 @@ export const productList: IProduct[] = [
         description: "Areia Sanitária Chalesco Micro Cristais de Sílica - 1,8Kg",
         price: 51.9,
         id: '8',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Antipulgas e Carrapatos Frontline Plus para Gatos - 1 Unidade",
@@ -71,7 +79,8 @@ export const productList: IProduct[] = [
         description: "Antipulgas e Carrapatos Frontline Plus para Gatos - 1 Unidade",
         price: 44.63,
         id: '9',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Ração Úmida Pet Delícia Natural Picadinho de Carne para Gatos - 320 g",
@@ -79,7 +88,8 @@ export const productList: IProduct[] = [
         description: "Ração Úmida Pet Delícia Natural Picadinho de Carne para Gatos - 320 g",
         price: 20.99,
         id: '10',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Fonte Bebedouro Amicus Aqua Mini Bivolt - Vermelha",
@@ -87,7 +97,8 @@ export const productList: IProduct[] = [
         description: "Fonte Bebedouro Amicus Aqua Mini Bivolt - Vermelha",
         price: 110.42,
         id: '11',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
     {
         name: "Bandeja Higiênica Furacão Pet Classic Preta para Gatos - Tam. Único",
@@ -95,7 +106,8 @@ export const productList: IProduct[] = [
         description: "Bandeja Higiênica Furacão Pet Classic Preta para Gatos - Tam. Único",
         price: 22.90,
         id: '12',
-        quantity: 0,
+        quantity: 1,
+        totalPrice: 0,
     },
 ]
 

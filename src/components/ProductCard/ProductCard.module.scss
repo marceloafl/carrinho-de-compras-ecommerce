@@ -10,3 +10,10 @@
     padding: 1rem;
     width: calc(100% / 4 - 1rem);
 }
+
+@media screen and (max-width: 768px){
+    .recommended-product__card{
+        box-shadow: none;
+        width: 100%;
+    }
+}

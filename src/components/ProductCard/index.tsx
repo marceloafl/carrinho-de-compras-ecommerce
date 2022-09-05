@@ -34,7 +34,7 @@ function ProductCard(
                 buttonType="main"
                 onClick={() => addProduct(product)}
             >
-                    Adiciona
+                Adicionar
             </Button>
         </li>
     )

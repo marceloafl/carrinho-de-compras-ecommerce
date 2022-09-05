@@ -8,57 +8,22 @@ import { useEffect, useState } from 'react';
 import { IProduct } from '../../../../../types/product';
 
 interface Props {
-    name: string,
-    image: string,
-    description: string,
-    price: number,
-    number: number,
-    incrementTotal: () => void,
-    decrementTotal: () => void,
-    removeProduct: (product: IProduct) => void,
     product: IProduct,
+    removeProduct: (product: IProduct) => void,
+    getQuantity: (product: IProduct, quantity: number) => void,
 }
 
-function CartContentInfo(
-    {
-        name,
-        image,
-        description,
-        price,
-        number,
-        incrementTotal,
-        decrementTotal,
-        removeProduct,
-        product,
-    }: Props){
-
-    const [quantity, setQuantity] = useState(1);
-
-    function increment(){
-        incrementTotal();
-        return setQuantity(previousQuantity => previousQuantity + 1)
-    };
-    
-    function decrement(){
-        if(quantity > 1){
-            decrementTotal();
-            return setQuantity(previousQuantity => previousQuantity - 1)
-        }
-        return quantity;
-    };
-
+function CartContentInfo({product, removeProduct, getQuantity}: Props){
     return (
         <li className={style['product-list--cart']}>
-            <ProductImage image={image}/>
-            <ProductDescription description={description}/>
+            <ProductImage image={product.image}/>
+            <ProductDescription description={product.description}/>
             <ProductQuantity
-                number={number}
-                quantity={quantity}
-                increment={increment}
-                decrement={decrement}
+                product={product}
+                getQuantity={getQuantity}
             />
             <ProductPrice
-                price={price}
+                price={product.price}
             />
             <DeleteProduct
                 removeProduct={removeProduct}

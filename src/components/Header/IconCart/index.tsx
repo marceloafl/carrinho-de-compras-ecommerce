@@ -2,14 +2,14 @@ import style from './IconCart.module.scss';
 import {FaShoppingCart} from 'react-icons/fa';
 
 interface Props{
-    number: number,
+    totalQuantity: number
 }
 
-function IconCart({number}: Props){
+function IconCart({totalQuantity}: Props){
     return (
         <a href="#" className={style['icon--shopping-cart']}>
             <FaShoppingCart />
-            <div className={style['shopping-cart-counter']}>{number}</div>
+            <div className={style['shopping-cart-counter']}>{totalQuantity}</div>
         </a>
     )
 }

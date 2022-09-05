@@ -1,27 +1,27 @@
 import style from './SummaryShipping.module.scss';
+import {maskNumber} from '../../../../common/utils/maskNumber';
 
 interface Props {
-    shipping: number,
-    partialTotal: number,
+    totalPrice: number,
+    shippingValue: number,
     minimumValue: number,
-    maskNumber(number: number): string
 }
 
-function SummaryShipping({shipping, partialTotal, minimumValue, maskNumber}: Props){
+function SummaryShipping({totalPrice, shippingValue, minimumValue}: Props){
 
     function calculateFreeShipping(partial: number, minimum: number){
         return maskNumber(minimum - partial);
-    }
+    };    
 
     return (
         <>
             <div className={style['summary-shipping']}>
                 <h4>Frete</h4>
-                <p>{maskNumber(shipping)}</p>
+                <p>{maskNumber(shippingValue)}</p>
             </div>
-            {partialTotal < minimumValue ?
+            {shippingValue > 0 ?
                 <p className={style['summary-shipping--free']}>
-                    Faltam<span>{` ${calculateFreeShipping(partialTotal, minimumValue)} `}</span>reais pra você ter frete grátis.
+                    Faltam<span>{` ${calculateFreeShipping(totalPrice, minimumValue)} `}</span>reais pra você ter frete grátis.
                 </p> : 
                 <p className={style['summary-shipping--free']}>
                     Parabéns, você ganhou frete grátis!
