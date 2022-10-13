@@ -1,5 +1,5 @@
 import style from './App.module.scss';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Cart from '../components/Cart';
 import Header from '../components/Header';
 import { productList } from '../assets/products/products';
@@ -10,8 +10,8 @@ function App() {
   const [products, setProducts] = useState<IProduct[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
-  const [recommendedProducts, setRecommendedProducts] = useState<IProduct[]>(productList);
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
+  const [recommendedProducts, setRecommendedProducts] = useState<IProduct[]>(productList);
 
   function getMaxIndex(){
     if (window.screen.width <= 768){
@@ -66,7 +66,17 @@ function App() {
     setTotalQuantity(0);
   }
 
-  useEffect(() => {
+  function selectProducts(){
+    if (window.screen.width <= 768){
+      let visibleProducts = productList.slice(carouselIndex, carouselIndex + 1)
+      setRecommendedProducts(visibleProducts);
+    } else {
+      let visibleProducts = productList.slice(carouselIndex * 4, carouselIndex * 4 + 4)
+      setRecommendedProducts(visibleProducts);
+    }
+  }
+
+  useLayoutEffect(() => {
     selectProducts();
   }, [carouselIndex]);
 
@@ -74,44 +84,6 @@ function App() {
     getTotalPrice();
     getNumber();
   }, [products]);
-
-  function selectProducts(){
-    if (window.screen.width <= 768){
-      switch (carouselIndex){
-        case 1: setRecommendedProducts(productList.slice(1, 2));
-        break;
-        case 2: setRecommendedProducts(productList.slice(2, 3));
-        break;
-        case 3: setRecommendedProducts(productList.slice(3, 4));
-        break;
-        case 4: setRecommendedProducts(productList.slice(4, 5));
-        break;
-        case 5: setRecommendedProducts(productList.slice(5, 6));
-        break;
-        case 6: setRecommendedProducts(productList.slice(6, 7));
-        break;
-        case 7: setRecommendedProducts(productList.slice(7, 8));
-        break;
-        case 8: setRecommendedProducts(productList.slice(8, 9));
-        break;
-        case 9: setRecommendedProducts(productList.slice(9, 10));
-        break;
-        case 10: setRecommendedProducts(productList.slice(10, 11));
-        break;
-        case 11: setRecommendedProducts(productList.slice(11));
-        break;
-        default: setRecommendedProducts(productList.slice(0, 1));
-      }
-    } else {
-      switch (carouselIndex){
-        case 1: setRecommendedProducts(productList.slice(4, 8));
-        break;
-        case 2: setRecommendedProducts(productList.slice(8));
-        break;
-        default: setRecommendedProducts(productList.slice(0, 4));
-      }
-    }
-  }
 
   return (
     <div className={style.appStyle}>

@@ -33,14 +33,14 @@ function CartSummary({totalPrice, totalQuantity}: Props){
         discount ? setFinalPrice((totalPrice - discount) + shippingValue) : setFinalPrice(totalPrice + shippingValue);
     }
 
-    function getCouponInUse(coupon?: string){
+    function getCouponInUse(coupon?: string): boolean{
         if(coupon){
             const selectedCoupon = discountCoupon.find(element => element.name === coupon);
             setCouponInUse(selectedCoupon);
-        } else{
-            setCouponInUse(undefined);
+            return true;
         }
-        
+        setCouponInUse(undefined);
+        return false;   
     }
 
     function calculateDiscount(){

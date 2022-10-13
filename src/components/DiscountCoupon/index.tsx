@@ -6,7 +6,7 @@ import { IDiscountCoupon } from '../../types/discountCoupon';
 import {FaTrashAlt} from 'react-icons/fa';
 
 interface Props {
-    getCouponInUse: (coupon?: string) => void,
+    getCouponInUse: (coupon?: string) => boolean,
     couponInUse: IDiscountCoupon | undefined
 }
 
@@ -26,7 +26,8 @@ function DiscountCoupon({getCouponInUse, couponInUse}: Props){
     }, [writtenCoupon])
 
     return (
-        <>{couponInUse ?
+        <>
+            {couponInUse ?
             <div className={style['coupon-in-use__wrapper']}>
                 <div className={style['coupon-in-use']}>
                     <p>Cupom<span>{` ${couponInUse?.name} `}</span>aplicado.</p>

@@ -13,7 +13,6 @@ interface Props{
 }
 
 function ProductRecommendation({recommendedProducts, goToNextIndex, goToPreviousIndex, addProduct}: Props){
-
     return (
         <div className={style['recommendation-section']}>
             <div className={style['recommendation-list__title']}>
