@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/contador-react/static/css/main.4765df28.css",
-    "main.js": "/contador-react/static/js/main.a1040d5a.js",
-    "index.html": "/contador-react/index.html",
-    "main.4765df28.css.map": "/contador-react/static/css/main.4765df28.css.map",
-    "main.a1040d5a.js.map": "/contador-react/static/js/main.a1040d5a.js.map"
+    "main.css": "/carrinho-de-compras-ecommerce/static/css/main.4765df28.css",
+    "main.js": "/carrinho-de-compras-ecommerce/static/js/main.a1040d5a.js",
+    "index.html": "/carrinho-de-compras-ecommerce/index.html",
+    "main.4765df28.css.map": "/carrinho-de-compras-ecommerce/static/css/main.4765df28.css.map",
+    "main.a1040d5a.js.map": "/carrinho-de-compras-ecommerce/static/js/main.a1040d5a.js.map"
   },
   "entrypoints": [
     "static/css/main.4765df28.css",
