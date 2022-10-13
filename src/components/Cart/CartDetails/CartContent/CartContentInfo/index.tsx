@@ -4,7 +4,6 @@ import ProductPrice from '../../../../ProductPrice';
 import ProductQuantity from './ProductQuantity';
 import style from './CartContentInfo.module.scss';
 import DeleteProduct from '../../../../DeleteProduct';
-import { useEffect, useState } from 'react';
 import { IProduct } from '../../../../../types/product';
 
 interface Props {

@@ -47,40 +47,40 @@ function App() {
     setProducts([...products]);
   }
 
-  function getTotalPrice(){
-    products.forEach(product => product.totalPrice = Math.round((product.price * product.quantity) * 100) / 100);
-    const prices = products.map(product => product.totalPrice);
-    if (prices.length > 0){
-      const totalPrice = prices.reduce((acc, cur) => acc + cur);
-      return setTotalPrice(Math.round(totalPrice * 100) / 100);
-    }
-    setTotalPrice(0);
-
-  }
-
-  function getNumber(){
-    const quantities = products.map(product => product.quantity);
-    if (quantities.length > 0){
-      return setTotalQuantity(quantities.reduce((acc, cur) => acc + cur));
-    }
-    setTotalQuantity(0);
-  }
-
-  function selectProducts(){
-    if (window.screen.width <= 768){
-      let visibleProducts = productList.slice(carouselIndex, carouselIndex + 1)
-      setRecommendedProducts(visibleProducts);
-    } else {
-      let visibleProducts = productList.slice(carouselIndex * 4, carouselIndex * 4 + 4)
-      setRecommendedProducts(visibleProducts);
-    }
-  }
+  
 
   useLayoutEffect(() => {
+    async function selectProducts(){
+      if (window.screen.width <= 768){
+        let visibleProducts = productList.slice(carouselIndex, carouselIndex + 1)
+        setRecommendedProducts(visibleProducts);
+      } else {
+        let visibleProducts = productList.slice(carouselIndex * 4, carouselIndex * 4 + 4)
+        setRecommendedProducts(visibleProducts);
+      }
+    }
     selectProducts();
   }, [carouselIndex]);
 
   useEffect(() => {
+    function getTotalPrice(){
+      products.forEach(product => product.totalPrice = Math.round((product.price * product.quantity) * 100) / 100);
+      const prices = products.map(product => product.totalPrice);
+      if (prices.length > 0){
+        const totalPrice = prices.reduce((acc, cur) => acc + cur);
+        return setTotalPrice(Math.round(totalPrice * 100) / 100);
+      }
+      setTotalPrice(0);
+  
+    }
+  
+    function getNumber(){
+      const quantities = products.map(product => product.quantity);
+      if (quantities.length > 0){
+        return setTotalQuantity(quantities.reduce((acc, cur) => acc + cur));
+      }
+      setTotalQuantity(0);
+    }
     getTotalPrice();
     getNumber();
   }, [products]);

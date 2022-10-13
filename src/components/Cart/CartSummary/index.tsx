@@ -21,17 +21,7 @@ function CartSummary({totalPrice, totalQuantity}: Props){
     const [couponInUse, setCouponInUse] = useState<IDiscountCoupon>();
     const [discount, setDiscount] = useState<number>();
 
-    function freeShipping(){
-        if (totalPrice > minimumValue){
-            return setShippingValue(0);
-        } else {
-            return setShippingValue(19.9);
-        }
-    }
-
-    function getFinalPrice(){
-        discount ? setFinalPrice((totalPrice - discount) + shippingValue) : setFinalPrice(totalPrice + shippingValue);
-    }
+    
 
     function getCouponInUse(coupon?: string): boolean{
         if(coupon){
@@ -43,16 +33,29 @@ function CartSummary({totalPrice, totalQuantity}: Props){
         return false;   
     }
 
-    function calculateDiscount(){
-        if (couponInUse){
-            const multiplier = couponInUse?.value / 100;
-            const discontValue = Math.round((totalPrice * multiplier) * 100) / 100;
-            return setDiscount(discontValue);
-        }
-        return setDiscount(0);
-    }
-    
+
     useEffect(() => {
+        function freeShipping(){
+            if (totalPrice > minimumValue){
+                return setShippingValue(0);
+            } else {
+                return setShippingValue(19.9);
+            }
+        }
+    
+        function getFinalPrice(){
+            discount ? setFinalPrice((totalPrice - discount) + shippingValue) : setFinalPrice(totalPrice + shippingValue);
+        }
+
+        function calculateDiscount(){
+            if (couponInUse){
+                const multiplier = couponInUse?.value / 100;
+                const discontValue = Math.round((totalPrice * multiplier) * 100) / 100;
+                return setDiscount(discontValue);
+            }
+            return setDiscount(0);
+        }
+
         freeShipping();
         getFinalPrice();
         calculateDiscount();

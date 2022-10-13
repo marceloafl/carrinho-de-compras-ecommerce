@@ -7,10 +7,10 @@ interface Props{
 
 function IconCart({totalQuantity}: Props){
     return (
-        <a href="#" className={style['icon--shopping-cart']}>
+        <div className={style['icon--shopping-cart']}>
             <FaShoppingCart />
             <div className={style['shopping-cart-counter']}>{totalQuantity}</div>
-        </a>
+        </div>
     )
 }
 

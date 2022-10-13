@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ProductCard from "../ProductCard";
 import SectionTitle from "../SectionTitle";
 import style from './ProductRecommendation.module.scss';

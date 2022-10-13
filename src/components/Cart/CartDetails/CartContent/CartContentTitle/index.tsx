@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import style from './CartContentTitle.module.scss';
 
 function CartContentTitle(){

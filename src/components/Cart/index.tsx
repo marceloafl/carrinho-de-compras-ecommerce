@@ -2,7 +2,6 @@ import style from './Cart.module.scss';
 import CartDetails from './CartDetails';
 import CartSummary from './CartSummary';
 import {IProduct} from '../../types/product';
-import { useState } from 'react';
 import ProductRecommendation from '../ProductRecommendation';
 import EmptyCart from '../EmptyCart';
 import BannerTop from '../BannerTop';

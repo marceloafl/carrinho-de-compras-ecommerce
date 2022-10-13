@@ -21,7 +21,7 @@ function ProductQuantity({product, getQuantity}: Props){
 
     useEffect(() => {
         getQuantity(product, quantity);
-    }, [quantity])
+    }, [quantity, getQuantity, product])
 
     return (
         <div className={style.quantity}>

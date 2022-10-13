@@ -7,7 +7,7 @@ function Footer(){
             <div className={style.contact}>
                 <p>Desenvolvido por Marcelo Lemes</p>
                 <p>E-mail: marceloaflemes@gmail.com</p>
-                <a href="https://marceloafl.github.io/portfolio/" target="_blank">Veja meu portfólio</a>
+                <a href="https://marceloafl.github.io/portfolio/" target="_blank" rel="noreferrer">Veja meu portfólio</a>
             </div>
             <Logo />
             <div>
